@@ -88,7 +88,7 @@ class TextButton extends ButtonStyleButton {
     super.clipBehavior = Clip.none,
     super.statesController,
     super.isSemanticButton,
-    required Widget super.child,
+    required super.child,
   });
 
   /// Create a text button from a pair of widgets that serve as the button's

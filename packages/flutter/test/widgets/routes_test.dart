@@ -138,7 +138,7 @@ void main() {
         ),
       ),
     );
-    final NavigatorState host = navigatorKey.currentState!;
+    final NavigatorState host = navigatorKey.currentState;
     await runNavigatorTest(
       tester,
       host,
@@ -225,7 +225,7 @@ void main() {
         ),
       ),
     );
-    final NavigatorState host = navigatorKey.currentState!;
+    final NavigatorState host = navigatorKey.currentState;
     await runNavigatorTest(
       tester,
       host,
@@ -340,7 +340,7 @@ void main() {
         ),
       ),
     );
-    final NavigatorState host = navigatorKey.currentState!;
+    final NavigatorState host = navigatorKey.currentState;
     await runNavigatorTest(
       tester,
       host,
@@ -424,7 +424,7 @@ void main() {
         ),
       ),
     );
-    final NavigatorState host = navigatorKey.currentState!;
+    final NavigatorState host = navigatorKey.currentState;
     await runNavigatorTest(
       tester,
       host,
@@ -2106,7 +2106,7 @@ class WidgetWithLocalHistoryState extends State<WidgetWithLocalHistory> {
   late LocalHistoryEntry _localHistory;
 
   void addLocalHistory() {
-    final ModalRoute<dynamic> route = ModalRoute.of(context)!;
+    final ModalRoute<dynamic> route = ModalRoute.of(context);
     _localHistory = LocalHistoryEntry();
     route.addLocalHistoryEntry(_localHistory);
   }

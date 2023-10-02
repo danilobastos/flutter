@@ -135,7 +135,7 @@ class MinimumTapTargetGuideline extends AccessibilityGuideline {
       result += _traverse(
         view,
         // TODO(pdblasi-google): Get the specific semantics root for this view when available
-        tester.binding.pipelineOwner.semanticsOwner!.rootSemanticsNode!,
+        tester.binding.pipelineOwner.semanticsOwner!.rootSemanticsNode,
       );
     }
 
@@ -242,7 +242,7 @@ class LabeledTapTargetGuideline extends AccessibilityGuideline {
     // TODO(pdblasi-google): Use view to retrieve the appropriate root semantics node when available.
     // ignore: unused_local_variable
     for (final FlutterView view in tester.platformDispatcher.views) {
-      result += _traverse(tester.binding.pipelineOwner.semanticsOwner!.rootSemanticsNode!);
+      result += _traverse(tester.binding.pipelineOwner.semanticsOwner!.rootSemanticsNode);
     }
 
     return result;
@@ -322,7 +322,7 @@ class MinimumTextContrastGuideline extends AccessibilityGuideline {
       // TODO(pdblasi): This renderView will need to be retrieved from view when available.
       final RenderView renderView = tester.binding.renderView;
       final OffsetLayer layer = renderView.debugLayer! as OffsetLayer;
-      final SemanticsNode root = renderView.owner!.semanticsOwner!.rootSemanticsNode!;
+      final SemanticsNode root = renderView.owner!.semanticsOwner!.rootSemanticsNode;
 
       late ui.Image image;
       final ByteData? byteData = await tester.binding.runAsync<ByteData?>(
@@ -335,7 +335,7 @@ class MinimumTextContrastGuideline extends AccessibilityGuideline {
         },
       );
 
-      result += await _evaluateNode(root, tester, image, byteData!, view);
+      result += await _evaluateNode(root, tester, image, byteData, view);
     }
 
     return result;

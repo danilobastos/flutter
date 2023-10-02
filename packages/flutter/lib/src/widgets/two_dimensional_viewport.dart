@@ -1019,7 +1019,7 @@ abstract class RenderTwoDimensionalViewport extends RenderBox implements RenderA
         }
     }
     _lastChild = previousChild;
-    parentDataOf(_lastChild!)._nextSibling = null;
+    parentDataOf(_lastChild)._nextSibling = null;
     // Reset for next layout pass.
     _leadingXIndex = null;
     _trailingXIndex = null;
@@ -1033,7 +1033,7 @@ abstract class RenderTwoDimensionalViewport extends RenderBox implements RenderA
     // For example, a table can have merged cells, spanning multiple
     // indices, but only represented by one RenderBox and ChildVicinity.
     if (_children.containsKey(vicinity)) {
-      final RenderBox child = _children[vicinity]!;
+      final RenderBox child = _children[vicinity];
       assert(parentDataOf(child).vicinity == vicinity);
       updateChildPaintData(child);
       if (previousChild == null) {
@@ -1121,7 +1121,7 @@ abstract class RenderTwoDimensionalViewport extends RenderBox implements RenderA
     }
 
     assert(_children.containsKey(vicinity));
-    final RenderBox child = _children[vicinity]!;
+    final RenderBox child = _children[vicinity];
     parentDataOf(child).vicinity = vicinity;
     return child;
   }
@@ -1142,13 +1142,13 @@ abstract class RenderTwoDimensionalViewport extends RenderBox implements RenderA
 
     // Set paintExtent (and visibility)
     childParentData._paintExtent = computeChildPaintExtent(
-      childParentData.layoutOffset!,
+      childParentData.layoutOffset,
       child.size,
     );
     // Set paintOffset
     childParentData.paintOffset = computeAbsolutePaintOffsetFor(
       child,
-      layoutOffset: childParentData.layoutOffset!,
+      layoutOffset: childParentData.layoutOffset,
     );
     // If the child is partially visible, or not visible at all, there is
     // visual overflow.
@@ -1392,7 +1392,7 @@ abstract class RenderTwoDimensionalViewport extends RenderBox implements RenderA
 
   @override
   void applyPaintTransform(RenderBox child, Matrix4 transform) {
-    final Offset paintOffset = parentDataOf(child).paintOffset!;
+    final Offset paintOffset = parentDataOf(child).paintOffset;
     transform.translate(paintOffset.dx, paintOffset.dy);
   }
 

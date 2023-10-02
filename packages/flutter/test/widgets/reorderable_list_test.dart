@@ -159,9 +159,9 @@ void main() {
     final SemanticsNode node = tester.getSemantics(find.text('item 0'));
     final SemanticsData data = node.getSemanticsData();
     expect(data.customSemanticsActionIds!.length, 2);
-    final CustomSemanticsAction action1 = CustomSemanticsAction.getAction(data.customSemanticsActionIds![0])!;
+    final CustomSemanticsAction action1 = CustomSemanticsAction.getAction(data.customSemanticsActionIds![0]);
     expect(action1.label, 'Move down');
-    final CustomSemanticsAction action2 = CustomSemanticsAction.getAction(data.customSemanticsActionIds![1])!;
+    final CustomSemanticsAction action2 = CustomSemanticsAction.getAction(data.customSemanticsActionIds![1]);
     expect(action2.label, 'Move to the end');
   });
 
@@ -407,7 +407,7 @@ void main() {
           of: find.byType(Icon),
           matching: find.byType(RichText),
         ),
-      ).text.style!;
+      ).text.style;
     }
 
     TextStyle getTextStyle() {
@@ -416,7 +416,7 @@ void main() {
           of: find.text('item 0'),
           matching: find.byType(RichText),
         ),
-      ).text.style!;
+      ).text.style;
     }
 
     // This SliverReorderableList has just one item: "item 0".

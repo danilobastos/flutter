@@ -386,7 +386,7 @@ class _TestWidgetInspectorService extends TestWidgetInspectorService {
       // ignore: avoid_dynamic_calls
       final InspectorSelection selection = getInspectorState().selection as InspectorSelection;
       expect(paragraphText(selection.current! as RenderParagraph), equals('TOP'));
-      final RenderObject topButton = find.byKey(topButtonKey).evaluate().first.renderObject!;
+      final RenderObject topButton = find.byKey(topButtonKey).evaluate().first.renderObject;
       expect(selection.candidates, contains(topButton));
 
       await tester.tap(find.text('TOP'));
@@ -4252,7 +4252,7 @@ class _TestWidgetInspectorService extends TestWidgetInspectorService {
         // Verify calling the screenshot method still works if the RenderObject
         // needs to be laid out again.
         final RenderObject container =
-            find.byKey(outerContainerKey).evaluate().single.renderObject!;
+            find.byKey(outerContainerKey).evaluate().single.renderObject;
         container
           ..markNeedsLayout()
           ..markNeedsPaint();
@@ -4332,12 +4332,12 @@ class _TestWidgetInspectorService extends TestWidgetInspectorService {
       );
 
       final TestWidgetsFlutterBinding binding = TestWidgetsFlutterBinding.ensureInitialized();
-      final ui.Image screenshotImage = (await binding.runAsync<ui.Image>(() async {
+      final ui.Image screenshotImage = await binding.runAsync<ui.Image>(() async {
         final String base64Screenshot = (await base64ScreenshotFuture)! as String;
         final ui.Codec codec = await ui.instantiateImageCodec(base64.decode(base64Screenshot));
         final ui.FrameInfo frame = await codec.getNextFrame();
         return frame.image;
-      }))!;
+      });
 
       await expectLater(
         screenshotImage,

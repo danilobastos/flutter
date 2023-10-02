@@ -272,7 +272,7 @@ void main() {
     await tester.tap(find.text('X'));
     await tester.pumpAndSettle(const Duration(seconds: 1));
 
-    final InputDecoration hourDecoration = _textField(tester, '7').decoration!;
+    final InputDecoration hourDecoration = _textField(tester, '7').decoration;
     expect(hourDecoration.filled, true);
     expect(hourDecoration.fillColor, material3
       ? defaultTheme.colorScheme.surfaceVariant
@@ -447,7 +447,7 @@ void main() {
     await tester.tap(find.text('X'));
     await tester.pumpAndSettle(const Duration(seconds: 1));
 
-    final InputDecoration hourDecoration = _textField(tester, '7').decoration!;
+    final InputDecoration hourDecoration = _textField(tester, '7').decoration;
     expect(hourDecoration.filled, timePickerTheme.inputDecorationTheme!.filled);
     expect(hourDecoration.fillColor, timePickerTheme.inputDecorationTheme!.fillColor);
     expect(hourDecoration.enabledBorder, timePickerTheme.inputDecorationTheme!.enabledBorder);
@@ -464,13 +464,13 @@ void main() {
     await tester.tap(find.text('X'));
     await tester.pumpAndSettle(const Duration(seconds: 1));
 
-    final InputDecoration hourDecoration = _textField(tester, '7').decoration!;
+    final InputDecoration hourDecoration = _textField(tester, '7').decoration;
     expect(hourDecoration.fillColor?.value, timePickerTheme.hourMinuteColor?.value);
   });
 }
 
-final Color _selectedColor = Colors.green[100]!;
-final Color _unselectedColor = Colors.green[200]!;
+final Color _selectedColor = Colors.green[100];
+final Color _unselectedColor = Colors.green[200];
 
 TimePickerThemeData _timePickerTheme({bool includeInputDecoration = false}) {
   Color getColor(Set<MaterialState> states) {

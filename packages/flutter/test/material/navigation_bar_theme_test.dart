@@ -279,7 +279,7 @@ TextStyle _selectedLabelStyle(WidgetTester tester) {
       of: find.text('Abc'),
       matching: find.byType(RichText),
     ),
-  ).text.style!;
+  ).text.style;
 }
 
 TextStyle _unselectedLabelStyle(WidgetTester tester) {
@@ -288,7 +288,7 @@ TextStyle _unselectedLabelStyle(WidgetTester tester) {
       of: find.text('Def'),
       matching: find.byType(RichText),
     ),
-  ).text.style!;
+  ).text.style;
 }
 
 NavigationDestinationLabelBehavior _labelBehavior(WidgetTester tester) {

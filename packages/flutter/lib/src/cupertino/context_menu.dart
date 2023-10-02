@@ -137,7 +137,7 @@ class CupertinoContextMenu extends StatefulWidget {
   CupertinoContextMenu({
     super.key,
     required this.actions,
-    required Widget this.child,
+    required this.child,
     this.enableHapticFeedback = false,
     @Deprecated(
       'Use CupertinoContextMenu.builder instead. '
@@ -541,7 +541,7 @@ class _CupertinoContextMenuState extends State<CupertinoContextMenu> with Ticker
         sigmaY: 5.0,
       ),
       contextMenuLocation: _contextMenuLocation,
-      previousChildRect: _decoyChildEndRect!,
+      previousChildRect: _decoyChildEndRect,
       builder: (BuildContext context, Animation<double> animation) {
         if (widget.child == null) {
           final Animation<double> localAnimation = Tween<double>(begin: CupertinoContextMenu.animationOpensAt, end: 1).animate(animation);

@@ -700,7 +700,7 @@ void main() {
       return null;
     }
 
-    final RenderObject nestedScrollViewLayer = find.byType(NestedScrollView).evaluate().first.renderObject!;
+    final RenderObject nestedScrollViewLayer = find.byType(NestedScrollView).evaluate().first.renderObject;
     void checkPhysicalLayer({required double elevation}) {
       final dynamic physicalModel = dfsFindPhysicalLayer(nestedScrollViewLayer);
       expect(physicalModel, isNotNull);
@@ -1458,7 +1458,7 @@ void main() {
       required bool visible,
     }) {
       final RenderSliver target = key.currentContext!.findRenderObject()! as RenderSliver;
-      final SliverGeometry geometry = target.geometry!;
+      final SliverGeometry geometry = target.geometry;
       expect(target.parent, isA<RenderSliverOverlapAbsorber>());
       expect(geometry.visible, visible);
       if (extentGreaterThan) {

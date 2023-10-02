@@ -196,8 +196,8 @@ void main() {
       ),
     );
 
-    Color iconColor(Key key) => tester.state<TestIconState>(find.byKey(key)).iconTheme.color!;
-    Color textColor(Key key) => tester.state<TestTextState>(find.byKey(key)).textStyle.color!;
+    Color iconColor(Key key) => tester.state<TestIconState>(find.byKey(key)).iconTheme.color;
+    Color textColor(Key key) => tester.state<TestTextState>(find.byKey(key)).textStyle.color;
 
     expect(textColor(expandedTitleKey), foregroundColor);
     expect(textColor(collapsedTitleKey), headerColor);
@@ -540,8 +540,8 @@ void main() {
       ),
     ));
 
-    Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color!;
-    Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color!;
+    Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color;
+    Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color;
 
     expect(getIconColor(), theme.colorScheme.onSurfaceVariant);
     expect(getTextColor(), theme.colorScheme.onSurface);
@@ -577,8 +577,8 @@ void main() {
       ),
     ));
 
-    Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color!;
-    Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color!;
+    Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color;
+    Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color;
 
     expect(getIconColor(), collapsedIconColor);
     expect(getTextColor(), collapsedTextColor);
@@ -913,8 +913,8 @@ void main() {
         ),
       ));
 
-      Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color!;
-      Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color!;
+      Color getIconColor() => tester.state<TestIconState>(find.byType(TestIcon)).iconTheme.color;
+      Color getTextColor() => tester.state<TestTextState>(find.byType(TestText)).textStyle.color;
 
       expect(getIconColor(), theme.unselectedWidgetColor);
       expect(getTextColor(), theme.textTheme.titleMedium!.color);

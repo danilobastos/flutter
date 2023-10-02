@@ -1247,13 +1247,13 @@ class TextStyle with Diagnosticable {
       locale: t < 0.5 ? a.locale : b.locale,
       foreground: (a.foreground != null || b.foreground != null)
         ? t < 0.5
-          ? a.foreground ?? (Paint()..color = a.color!)
-          : b.foreground ?? (Paint()..color = b.color!)
+          ? a.foreground ?? (Paint()..color = a.color)
+          : b.foreground ?? (Paint()..color = b.color)
         : null,
       background: (a.background != null || b.background != null)
         ? t < 0.5
-          ? a.background ?? (Paint()..color = a.backgroundColor!)
-          : b.background ?? (Paint()..color = b.backgroundColor!)
+          ? a.background ?? (Paint()..color = a.backgroundColor)
+          : b.background ?? (Paint()..color = b.backgroundColor)
         : null,
       shadows: t < 0.5 ? a.shadows : b.shadows,
       fontFeatures: t < 0.5 ? a.fontFeatures : b.fontFeatures,
@@ -1291,7 +1291,7 @@ class TextStyle with Diagnosticable {
       locale: locale,
       foreground: foreground,
       background: background ?? (backgroundColor != null
-        ? (Paint()..color = backgroundColor!)
+        ? (Paint()..color = backgroundColor)
         : null
       ),
       shadows: shadows,

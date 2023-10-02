@@ -146,11 +146,11 @@ void main() {
 
     // Check that paint offset for sliver children are correct as well.
     final RenderSliverCrossAxisGroup sliverCrossAxisRenderObject = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
-    RenderSliver child = sliverCrossAxisRenderObject.firstChild!;
+    RenderSliver child = sliverCrossAxisRenderObject.firstChild;
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(0));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(30));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(210));
 
     final RenderSliverCrossAxisGroup renderGroup = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
@@ -201,11 +201,11 @@ void main() {
 
     // Check that paint offset for sliver children are correct as well.
     final RenderSliverCrossAxisGroup sliverCrossAxisRenderObject = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
-    RenderSliver child = sliverCrossAxisRenderObject.firstChild!;
+    RenderSliver child = sliverCrossAxisRenderObject.firstChild;
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(0));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(30));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(410));
 
     final RenderSliverCrossAxisGroup renderGroup = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
@@ -257,11 +257,11 @@ void main() {
 
     // Check that paint offset for sliver children are correct as well.
     final RenderSliverCrossAxisGroup sliverCrossAxisRenderObject = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
-    RenderSliver child = sliverCrossAxisRenderObject.firstChild!;
+    RenderSliver child = sliverCrossAxisRenderObject.firstChild;
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(0));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(30));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dy, equals(410));
 
     final RenderSliverCrossAxisGroup renderGroup = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
@@ -309,11 +309,11 @@ void main() {
 
     // Check that paint offset for sliver children are correct as well.
     final RenderSliverCrossAxisGroup sliverCrossAxisRenderObject = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));
-    RenderSliver child = sliverCrossAxisRenderObject.firstChild!;
+    RenderSliver child = sliverCrossAxisRenderObject.firstChild;
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(0));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(30));
-    child = sliverCrossAxisRenderObject.childAfter(child)!;
+    child = sliverCrossAxisRenderObject.childAfter(child);
     expect((child.parentData! as SliverPhysicalParentData).paintOffset.dx, equals(210));
 
     final RenderSliverCrossAxisGroup renderGroup = tester.renderObject<RenderSliverCrossAxisGroup>(find.byType(SliverCrossAxisGroup));

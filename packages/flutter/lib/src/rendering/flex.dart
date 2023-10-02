@@ -220,6 +220,7 @@ bool? _startIsTopLeft(Axis direction, TextDirection? textDirection, VerticalDire
           return null;
       }
   }
+  return null;
 }
 
 typedef _ChildSizingFunction = double Function(RenderBox child, double extent);
@@ -920,7 +921,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
           }
           return true;
         }());
-        final double? distance = child.getDistanceToBaseline(textBaseline!, onlyReal: true);
+        final double? distance = child.getDistanceToBaseline(textBaseline, onlyReal: true);
         if (distance != null) {
           maxBaselineDistance = math.max(maxBaselineDistance, distance);
           maxSizeAboveBaseline = math.max(
@@ -1001,7 +1002,7 @@ class RenderFlex extends RenderBox with ContainerRenderObjectMixin<RenderBox, Fl
         case CrossAxisAlignment.baseline:
           if (_direction == Axis.horizontal) {
             assert(textBaseline != null);
-            final double? distance = child.getDistanceToBaseline(textBaseline!, onlyReal: true);
+            final double? distance = child.getDistanceToBaseline(textBaseline, onlyReal: true);
             if (distance != null) {
               childCrossPosition = maxBaselineDistance - distance;
             } else {

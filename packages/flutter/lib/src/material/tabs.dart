@@ -156,7 +156,7 @@ class Tab extends StatelessWidget implements PreferredSizeWidget {
       label = _buildLabelText();
     } else if (text == null && child == null) {
       calculatedHeight = _kTabHeight;
-      label = icon!;
+      label = icon;
     } else {
       calculatedHeight = _kTextAndIconTabHeight;
       label = Column(
@@ -250,9 +250,9 @@ class _TabStyle extends AnimatedWidget {
 
     return MaterialStateColor.resolveWith((Set<MaterialState> states) {
       if (states.contains(MaterialState.selected)) {
-        return Color.lerp(selectedColor, unselectedColor, animation.value)!;
+        return Color.lerp(selectedColor, unselectedColor, animation.value);
       }
-      return Color.lerp(unselectedColor, selectedColor, animation.value)!;
+      return Color.lerp(unselectedColor, selectedColor, animation.value);
     });
   }
 
@@ -331,7 +331,7 @@ class _TabLabelBarRenderer extends RenderFlex {
       case TextDirection.ltr:
         xOffsets.add(size.width);
     }
-    onPerformLayout(xOffsets, textDirection!, size.width);
+    onPerformLayout(xOffsets, textDirection, size.width);
   }
 }
 
@@ -359,7 +359,7 @@ class _TabLabelBar extends Flex {
       mainAxisAlignment: mainAxisAlignment,
       mainAxisSize: mainAxisSize,
       crossAxisAlignment: crossAxisAlignment,
-      textDirection: getEffectiveTextDirection(context)!,
+      textDirection: getEffectiveTextDirection(context),
       verticalDirection: verticalDirection,
       onPerformLayout: onPerformLayout,
     );
@@ -502,7 +502,7 @@ class _IndicatorPainter extends CustomPainter {
       textDirection: _currentTextDirection,
     );
     if (dividerColor != null) {
-      final Paint dividerPaint = Paint()..color = dividerColor!..strokeWidth = 1;
+      final Paint dividerPaint = Paint()..color = dividerColor..strokeWidth = 1;
       canvas.drawLine(Offset(0, size.height), Offset(size.width, size.height), dividerPaint);
     }
     _painter!.paint(canvas, _currentRect!.topLeft, configuration);
@@ -2062,29 +2062,29 @@ class TabPageSelector extends StatelessWidget {
       // The selection's animation is animating from previousValue to value.
       final double t = 1.0 - _indexChangeProgress(tabController);
       if (tabController.index == tabIndex) {
-        background = selectedColorTween.lerp(t)!;
+        background = selectedColorTween.lerp(t);
       } else if (tabController.previousIndex == tabIndex) {
-        background = previousColorTween.lerp(t)!;
+        background = previousColorTween.lerp(t);
       } else {
-        background = selectedColorTween.begin!;
+        background = selectedColorTween.begin;
       }
     } else {
       // The selection's offset reflects how far the TabBarView has / been dragged
       // to the previous page (-1.0 to 0.0) or the next page (0.0 to 1.0).
       final double offset = tabController.offset;
       if (tabController.index == tabIndex) {
-        background = selectedColorTween.lerp(1.0 - offset.abs())!;
+        background = selectedColorTween.lerp(1.0 - offset.abs());
       } else if (tabController.index == tabIndex - 1 && offset > 0.0) {
-        background = selectedColorTween.lerp(offset)!;
+        background = selectedColorTween.lerp(offset);
       } else if (tabController.index == tabIndex + 1 && offset < 0.0) {
-        background = selectedColorTween.lerp(-offset)!;
+        background = selectedColorTween.lerp(-offset);
       } else {
-        background = selectedColorTween.begin!;
+        background = selectedColorTween.begin;
       }
     }
     return TabPageSelectorIndicator(
       backgroundColor: background,
-      borderColor: selectedColorTween.end!,
+      borderColor: selectedColorTween.end,
       size: indicatorSize,
       borderStyle: borderStyle ?? BorderStyle.solid,
     );

@@ -78,7 +78,7 @@ Finder findBorderPainter() {
 }
 
 double getBorderBottom(WidgetTester tester) {
-  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()))!;
+  final RenderBox box = InputDecorator.containerOf(tester.element(findBorderPainter()));
   return box.size.height;
 }
 
@@ -122,7 +122,7 @@ BorderSide? getBorderSide(WidgetTester tester) {
 }
 
 BorderRadius? getBorderRadius(WidgetTester tester) {
-  final InputBorder border = getBorder(tester)!;
+  final InputBorder border = getBorder(tester);
   if (border is UnderlineInputBorder) {
     return border.borderRadius;
   }
@@ -4290,7 +4290,7 @@ void main() {
 
     final RenderObject renderer = tester.renderObject(find.byType(InputDecorator));
     final Iterable<String> nodeNames = renderer.debugDescribeChildren()
-      .map((DiagnosticsNode node) => node.name!);
+      .map((DiagnosticsNode node) => node.name);
     expect(nodeNames, unorderedEquals(<String>[
       'container',
       'counter',
@@ -4306,7 +4306,7 @@ void main() {
     ]));
 
     final Set<Object> nodeValues = Set<Object>.from(
-      renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value!),
+      renderer.debugDescribeChildren().map<Object>((DiagnosticsNode node) => node.value),
     );
     expect(nodeValues.length, 11);
   });

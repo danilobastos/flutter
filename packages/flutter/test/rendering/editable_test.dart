@@ -969,7 +969,7 @@ void main() {
       // Give it a width that forces the editable to wrap.
       editable.layout(const BoxConstraints.tightFor(width: 200));
 
-      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 0, end: 20 + 2))!;
+      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 0, end: 20 + 2));
 
       // Since the range covers an entire line, the Rect should also be almost
       // as wide as the entire paragraph (give or take 1 character).
@@ -1346,12 +1346,12 @@ void main() {
         selection: const TextSelection.collapsed(offset: 3),
         children: renderBoxes,
       );
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable);
       editable.hasFocus = true;
       pumpFrame();
 
-      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 5))!;
+      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 5));
       expect(composingRect, const Rect.fromLTRB(40.0, 0.0, 54.0, 14.0));
     }, skip: isBrowser); // https://github.com/flutter/flutter/issues/61021
 
@@ -1389,12 +1389,12 @@ void main() {
         children: renderBoxes,
       );
 
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable);
       editable.hasFocus = true;
       pumpFrame();
 
-      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 7))!;
+      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 7));
       expect(composingRect, const Rect.fromLTRB(40.0, 0.0, 82.0, 14.0));
     }, skip: isBrowser); // https://github.com/flutter/flutter/issues/61021
 
@@ -1435,14 +1435,14 @@ void main() {
       );
 
       // Force a line wrap
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable, constraints: const BoxConstraints(maxWidth: 75));
       editable.hasFocus = true;
       pumpFrame();
 
-      Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 6))!;
+      Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 6));
       expect(composingRect, const Rect.fromLTRB(40.0, 0.0, 68.0, 14.0));
-      composingRect = editable.getRectForComposingRange(const TextRange(start: 6, end: 7))!;
+      composingRect = editable.getRectForComposingRange(const TextRange(start: 6, end: 7));
       expect(composingRect, const Rect.fromLTRB(0.0, 14.0, 14.0, 28.0));
     }, skip: isBrowser); // https://github.com/flutter/flutter/issues/61021
 
@@ -1486,20 +1486,20 @@ void main() {
       );
 
       // Force a line wrap
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable, constraints: const BoxConstraints(maxWidth: 75));
       editable.hasFocus = true;
       pumpFrame();
 
-      Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 6))!;
+      Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 6));
       expect(composingRect, const Rect.fromLTRB(40.0, 0.0, 68.0, 14.0));
-      composingRect = editable.getRectForComposingRange(const TextRange(start: 6, end: 7))!;
+      composingRect = editable.getRectForComposingRange(const TextRange(start: 6, end: 7));
       expect(composingRect, const Rect.fromLTRB(0.0, 14.0, 14.0, 28.0));
-      composingRect = editable.getRectForComposingRange(const TextRange(start: 7, end: 8))!; // H
+      composingRect = editable.getRectForComposingRange(const TextRange(start: 7, end: 8)); // H
       expect(composingRect, const Rect.fromLTRB(14.0, 18.0, 24.0, 28.0));
-      composingRect = editable.getRectForComposingRange(const TextRange(start: 8, end: 9))!; // I
+      composingRect = editable.getRectForComposingRange(const TextRange(start: 8, end: 9)); // I
       expect(composingRect, const Rect.fromLTRB(24.0, 18.0, 34.0, 28.0));
-      composingRect = editable.getRectForComposingRange(const TextRange(start: 9, end: 10))!;
+      composingRect = editable.getRectForComposingRange(const TextRange(start: 9, end: 10));
       expect(composingRect, const Rect.fromLTRB(34.0, 14.0, 48.0, 28.0));
     }, skip: isBrowser); // https://github.com/flutter/flutter/issues/61021
 
@@ -1542,7 +1542,7 @@ void main() {
         children: renderBoxes,
       );
 
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       // Force a line wrap
       layout(editable, constraints: const BoxConstraints(maxWidth: 75));
       editable.hasFocus = true;
@@ -1588,12 +1588,12 @@ void main() {
         selection: const TextSelection.collapsed(offset: 3),
         children: renderBoxes,
       );
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable);
       editable.hasFocus = true;
       pumpFrame();
 
-      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 5))!;
+      final Rect composingRect = editable.getRectForComposingRange(const TextRange(start: 4, end: 5));
       expect(composingRect, const Rect.fromLTRB(40.0, -100.0, 54.0, -86.0));
     }, skip: isBrowser); // https://github.com/flutter/flutter/issues/61021
 
@@ -1634,7 +1634,7 @@ void main() {
         textScaleFactor: 2.0,
         children: renderBoxes,
       );
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable, constraints: const BoxConstraints(maxWidth: screenWidth));
       expect(editable.computeMaxIntrinsicWidth(fixedHeight),
         2.0 * 10.0 * 4 + 14.0 * 7 + 1.0,
@@ -1676,7 +1676,7 @@ void main() {
         ),
         children: renderBoxes,
       );
-      _applyParentData(renderBoxes, editable.text!);
+      _applyParentData(renderBoxes, editable.text);
       layout(editable, constraints: BoxConstraints.loose(const Size(500.0, 500.0)));
       // Prepare for painting after layout.
       pumpFrame(phase: EnginePhase.compositingBits);

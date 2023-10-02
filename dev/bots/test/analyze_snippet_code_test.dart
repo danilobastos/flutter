@@ -8,7 +8,6 @@
 
 import 'dart:io';
 
-import 'common.dart';
 
 const List<String> expectedMainErrors = <String>[
   'dev/bots/test/analyze-snippet-code-test-input/known_broken_documentation.dart:30:5: (expression) (unnecessary_new)',

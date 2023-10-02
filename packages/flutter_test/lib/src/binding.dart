@@ -523,7 +523,7 @@ abstract class TestWidgetsFlutterBinding extends BindingBase
 
   @override
   ViewConfiguration createViewConfiguration() {
-    final FlutterView view = platformDispatcher.implicitView!;
+    final FlutterView view = platformDispatcher.implicitView;
     final double devicePixelRatio = view.devicePixelRatio;
     final Size size = _surfaceSize ?? view.physicalSize / devicePixelRatio;
     return ViewConfiguration(
@@ -776,7 +776,7 @@ abstract class TestWidgetsFlutterBinding extends BindingBase
       assert(Zone.current == _parentZone);
       if (_pendingExceptionDetails != null) {
         debugPrint = debugPrintOverride; // just in case the test overrides it -- otherwise we won't see the error!
-        reportTestException(_pendingExceptionDetails!, testDescription);
+        reportTestException(_pendingExceptionDetails, testDescription);
         _pendingExceptionDetails = null;
       }
       if (!completer.isCompleted) {
@@ -1990,7 +1990,7 @@ class LiveTestWidgetsFlutterBinding extends TestWidgetsFlutterBinding {
   ViewConfiguration createViewConfiguration() {
     return TestViewConfiguration.fromView(
       size: _surfaceSize ?? _kDefaultTestViewportSize,
-      view: platformDispatcher.implicitView!,
+      view: platformDispatcher.implicitView,
     );
   }
 

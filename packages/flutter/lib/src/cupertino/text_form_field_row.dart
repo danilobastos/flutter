@@ -331,7 +331,7 @@ class _CupertinoTextFormFieldRowState extends FormFieldState<String> {
 
     if (widget.initialValue != null) {
       setState(() {
-        _effectiveController!.text = widget.initialValue!;
+        _effectiveController!.text = widget.initialValue;
       });
     }
   }

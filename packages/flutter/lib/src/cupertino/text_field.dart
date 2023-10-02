@@ -1149,7 +1149,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField> with Restoratio
         return Row(children: <Widget>[
           // Insert a prefix at the front if the prefix visibility mode matches
           // the current text state.
-          if (_showPrefixWidget(text!)) widget.prefix!,
+          if (_showPrefixWidget(text)) widget.prefix!,
           // In the middle part, stack the placeholder on top of the main EditableText
           // if needed.
           Expanded(
@@ -1169,7 +1169,7 @@ class _CupertinoTextFieldState extends State<CupertinoTextField> with Restoratio
                       ),
                     ),
                   ),
-                child!,
+                child,
               ],
             ),
           ),

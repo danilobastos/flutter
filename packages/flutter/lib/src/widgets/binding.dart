@@ -966,7 +966,7 @@ mixin WidgetsBinding on BindingBase, ServicesBinding, SchedulerBinding, GestureB
   /// wrapped in a [View].
   Widget wrapWithDefaultView(Widget rootWidget) {
     return View(
-      view: platformDispatcher.implicitView!,
+      view: platformDispatcher.implicitView,
       child: rootWidget,
     );
   }

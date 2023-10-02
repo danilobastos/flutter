@@ -242,7 +242,7 @@ void main() {
   });
 
   test('Should synthesize kPrimaryButton for touch when no button is set', () {
-    final Offset location = const Offset(10.0, 10.0) * devicePixelRatio;
+    const Offset location = Offset(10.0, 10.0) * devicePixelRatio;
     final ui.PointerDataPacket packet = ui.PointerDataPacket(
       data: <ui.PointerData>[
         ui.PointerData(change: ui.PointerChange.add, physicalX: location.dx, physicalY: location.dy),
@@ -269,7 +269,7 @@ void main() {
   });
 
   test('Should not synthesize kPrimaryButton for touch when a button is set', () {
-    final Offset location = const Offset(10.0, 10.0) * devicePixelRatio;
+    const Offset location = Offset(10.0, 10.0) * devicePixelRatio;
     final ui.PointerDataPacket packet = ui.PointerDataPacket(
       data: <ui.PointerData>[
         ui.PointerData(change: ui.PointerChange.add, physicalX: location.dx, physicalY: location.dy),
@@ -296,7 +296,7 @@ void main() {
   });
 
   test('Should synthesize kPrimaryButton for stylus when no button is set', () {
-    final Offset location = const Offset(10.0, 10.0) * devicePixelRatio;
+    const Offset location = Offset(10.0, 10.0) * devicePixelRatio;
     for (final PointerDeviceKind kind in <PointerDeviceKind>[
       PointerDeviceKind.stylus,
       PointerDeviceKind.invertedStylus,
@@ -329,7 +329,7 @@ void main() {
   });
 
   test('Should synthesize kPrimaryButton for unknown devices when no button is set', () {
-    final Offset location = const Offset(10.0, 10.0) * devicePixelRatio;
+    const Offset location = Offset(10.0, 10.0) * devicePixelRatio;
     const PointerDeviceKind kind = PointerDeviceKind.unknown;
     final ui.PointerDataPacket packet = ui.PointerDataPacket(
       data: <ui.PointerData>[
@@ -357,7 +357,7 @@ void main() {
   });
 
   test('Should not synthesize kPrimaryButton for mouse', () {
-    final Offset location = const Offset(10.0, 10.0) * devicePixelRatio;
+    const Offset location = Offset(10.0, 10.0) * devicePixelRatio;
     for (final PointerDeviceKind kind in <PointerDeviceKind>[
       PointerDeviceKind.mouse,
     ]) {

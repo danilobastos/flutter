@@ -594,7 +594,7 @@ class _UiKitViewState extends State<UiKitView> {
       focusNode: focusNode,
       onFocusChange: (bool isFocused) => _onFocusChange(isFocused, controller),
       child: _UiKitPlatformView(
-        controller: _controller!,
+        controller: _controller,
         hitTestBehavior: widget.hitTestBehavior,
         gestureRecognizers: widget.gestureRecognizers ?? _emptyRecognizersSet,
       ),
@@ -1148,7 +1148,7 @@ class _AndroidViewSurfaceState extends State<AndroidViewSurface> {
 // Displays an Android platform view via GL texture.
 class _TextureBasedAndroidViewSurface extends PlatformViewSurface {
   const _TextureBasedAndroidViewSurface({
-    required AndroidViewController super.controller,
+    required super.controller,
     required super.hitTestBehavior,
     required super.gestureRecognizers,
   });
@@ -1171,7 +1171,7 @@ class _TextureBasedAndroidViewSurface extends PlatformViewSurface {
 
 class _PlatformLayerBasedAndroidViewSurface extends PlatformViewSurface {
   const _PlatformLayerBasedAndroidViewSurface({
-    required AndroidViewController super.controller,
+    required super.controller,
     required super.hitTestBehavior,
     required super.gestureRecognizers,
   });

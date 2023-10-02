@@ -1211,13 +1211,13 @@ void main() {
           tabs: <Widget>[
             Builder(
               builder: (BuildContext context) {
-                firstColor = IconTheme.of(context).color!;
+                firstColor = IconTheme.of(context).color;
                 return const Text('First');
               },
             ),
             Builder(
               builder: (BuildContext context) {
-                secondColor = IconTheme.of(context).color!;
+                secondColor = IconTheme.of(context).color;
                 return const Text('Second');
               },
             ),
@@ -2954,7 +2954,7 @@ void main() {
     );
 
     final RenderBox tabBarBox = tester.firstRenderObject<RenderBox>(find.byType(TabBar));
-    final double tabBarHeight = 40.0 + indicatorWeight + padding.top + padding.bottom;  // 40 = max tab height
+    const double tabBarHeight = 40.0 + indicatorWeight + padding.top + padding.bottom;  // 40 = max tab height
     expect(tabBarBox.size.height, tabBarHeight);
 
     final double tabSize = (tabBarBox.size.width - padding.horizontal) / 2.0;
@@ -3010,7 +3010,7 @@ void main() {
     );
 
     final RenderBox tabBarBox = tester.firstRenderObject<RenderBox>(find.byType(TabBar));
-    final double tabBarHeight = 50.0 + indicatorWeight + padding.top + padding.bottom;  // 50 = max tab height
+    const double tabBarHeight = 50.0 + indicatorWeight + padding.top + padding.bottom;  // 50 = max tab height
     expect(tabBarBox.size.height, tabBarHeight);
 
     // Tab0 width = 130, height = 30
@@ -3102,8 +3102,8 @@ void main() {
     expect(tester.getRect(find.byKey(tabs[2].key!)), tabRect);
 
     // Tab 0 selected, indicatorPadding == labelPadding
-    final double indicatorLeft = indicatorPadding.left + indicatorWeight / 2.0;
-    final double indicatorRight = 130.0 + labelPadding.horizontal - indicatorPadding.right - indicatorWeight / 2.0;
+    const double indicatorLeft = indicatorPadding.left + indicatorWeight / 2.0;
+    const double indicatorRight = 130.0 + labelPadding.horizontal - indicatorPadding.right - indicatorWeight / 2.0;
     final double indicatorY = tabBottom + indicatorWeight / 2.0;
     expect(tabBarBox, paints..line(
       strokeWidth: indicatorWeight,
@@ -3174,8 +3174,8 @@ void main() {
     expect(tester.getRect(find.byKey(tabs[2].key!)), tabRect);
 
     // Tab 0 selected
-    final double indicatorLeft = indicatorPadding.left + labelPadding.left + indicatorWeight / 2.0;
-    final double indicatorRight = labelPadding.left + 130.0 - indicatorPadding.right - indicatorWeight / 2.0;
+    const double indicatorLeft = indicatorPadding.left + labelPadding.left + indicatorWeight / 2.0;
+    const double indicatorRight = labelPadding.left + 130.0 - indicatorPadding.right - indicatorWeight / 2.0;
     final double indicatorY = tabBottom + indicatorWeight / 2.0;
     expect(tabBarBox, paints..line(
       strokeWidth: indicatorWeight,
@@ -4481,8 +4481,8 @@ void main() {
       isLabelColorNull: true,
       isTabBarThemeMSC: true,
     ));
-    expect(getTab1Color(), equals(getSelectedColor(materialTabBarTheme.labelColor!)));
-    expect(getTab2Color(), equals(getUnselectedColor(materialTabBarTheme.labelColor!)));
+    expect(getTab1Color(), equals(getSelectedColor(materialTabBarTheme.labelColor)));
+    expect(getTab2Color(), equals(getUnselectedColor(materialTabBarTheme.labelColor)));
 
     // next precedence: tabBarTheme.labelColor and
     // tabBarTheme.unselectedLabelColor
@@ -4912,11 +4912,11 @@ void main() {
           unselectedLabelColor: Colors.black,
           tabs: <Widget>[
             Builder(builder: (BuildContext context) {
-              firstColor = DefaultTextStyle.of(context).style.color!;
+              firstColor = DefaultTextStyle.of(context).style.color;
               return const Text('First');
             }),
             Builder(builder: (BuildContext context) {
-              secondColor = DefaultTextStyle.of(context).style.color!;
+              secondColor = DefaultTextStyle.of(context).style.color;
               return const Text('Second');
             }),
           ],

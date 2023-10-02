@@ -3124,7 +3124,7 @@ void main() {
     );
 
     Color textColor() {
-      return tester.renderObject<RenderParagraph>(find.text('title')).text.style!.color!;
+      return tester.renderObject<RenderParagraph>(find.text('title')).text.style!.color;
     }
     Color? leadingIconColor() => iconStyle(tester, Icons.add_circle)?.color;
     Color? actionIconColor() => iconStyle(tester, Icons.ac_unit)?.color;

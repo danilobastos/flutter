@@ -227,7 +227,7 @@ class SelectableText extends StatefulWidget {
   ///
   /// The [autofocus] and [dragStartBehavior] arguments must not be null.
   const SelectableText.rich(
-    TextSpan this.textSpan, {
+    this.textSpan, {
     super.key,
     this.focusNode,
     this.style,

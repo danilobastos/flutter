@@ -348,7 +348,7 @@ void main() {
         ..rotateZ(-math.pi / 2)
         ..translate(-offset.dx, -offset.dy);
 
-      final Offset localDownPosition = const Offset(50, 50) + const Offset(5, -10);
+      const Offset localDownPosition = Offset(50, 50) + Offset(5, -10);
       expect(down.localPosition, within(distance: 0.001, from: localDownPosition));
       expect(down.position, downPosition);
       expect(down.delta, Offset.zero);

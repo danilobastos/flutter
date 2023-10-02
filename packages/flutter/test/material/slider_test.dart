@@ -1769,7 +1769,7 @@ void main() {
                 value: value,
                 overlayColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
                   if (states.contains(MaterialState.focused)) {
-                    return Colors.purple[500]!;
+                    return Colors.purple[500];
                   }
 
                   return Colors.transparent;
@@ -1891,7 +1891,7 @@ void main() {
                 value: value,
                 overlayColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
                   if (states.contains(MaterialState.hovered)) {
-                    return Colors.cyan[500]!;
+                    return Colors.cyan[500];
                   }
 
                   return Colors.transparent;
@@ -2031,7 +2031,7 @@ void main() {
                 focusNode: focusNode,
                 overlayColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
                   if (states.contains(MaterialState.dragged)) {
-                    return Colors.lime[500]!;
+                    return Colors.lime[500];
                   }
 
                   return Colors.transparent;
@@ -2488,7 +2488,7 @@ void main() {
 
   testWidgets('Slider gains keyboard focus when it gains semantics focus on Windows', (WidgetTester tester) async {
     final SemanticsTester semantics = SemanticsTester(tester);
-    final SemanticsOwner semanticsOwner = tester.binding.pipelineOwner.semanticsOwner!;
+    final SemanticsOwner semanticsOwner = tester.binding.pipelineOwner.semanticsOwner;
     final FocusNode focusNode = FocusNode();
     await tester.pumpWidget(
       MaterialApp(

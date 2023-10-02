@@ -315,7 +315,7 @@ class _RenderDiagonal extends RenderBox with SlottedContainerRenderObjectMixin<_
     Size topLeftSize = Size.zero;
     if (_topLeft != null) {
       _topLeft!.layout(childConstraints, parentUsesSize: true);
-      _positionChild(_topLeft!, Offset.zero);
+      _positionChild(_topLeft, Offset.zero);
       topLeftSize = _topLeft!.size;
     }
 
@@ -323,7 +323,7 @@ class _RenderDiagonal extends RenderBox with SlottedContainerRenderObjectMixin<_
     if (_bottomRight != null) {
       _bottomRight!.layout(childConstraints, parentUsesSize: true);
       _positionChild(
-        _bottomRight!,
+        _bottomRight,
         Offset(topLeftSize.width, topLeftSize.height),
       );
       bottomRightSize = _bottomRight!.size;
@@ -350,10 +350,10 @@ class _RenderDiagonal extends RenderBox with SlottedContainerRenderObjectMixin<_
   @override
   void paint(PaintingContext context, Offset offset) {
     if (_topLeft != null) {
-      _paintChild(_topLeft!, context, offset);
+      _paintChild(_topLeft, context, offset);
     }
     if (_bottomRight != null) {
-      _paintChild(_bottomRight!, context, offset);
+      _paintChild(_bottomRight, context, offset);
     }
   }
 

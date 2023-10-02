@@ -26,7 +26,7 @@ class TestAssetBundle extends AssetBundle {
         ],
       };
 
-      final ByteData data = const StandardMessageCodec().encodeMessage(binManifestData)!;
+      final ByteData data = const StandardMessageCodec().encodeMessage(binManifestData);
       return data;
     }
 

@@ -14,5 +14,6 @@
     "githubPullRequests.ignoredPullRequestBranches": [
         "master"
     ],
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "cmake.sourceDirectory": "D:/Projetos/Flutter/Coleira/flutter/dev/benchmarks/complex_layout/windows"
 }
